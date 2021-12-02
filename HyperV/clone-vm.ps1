@@ -21,7 +21,7 @@ function clone-vm {
     {
         $VMN = Read-Host "New VM Name"
         New-Item -ItemType Directory -Path "$HyperVF\$VMN"
-        Import-VM -Path $file.FullName -Copy -GenerateNewId -VirtualMachinePath "C:\HyperV\$VMN" -VhdDestinationPath "C:\HyperV\$VMN"
+        Import-VM -Path $file.FullName -Copy -GenerateNewId -VirtualMachinePath "$HyperVF\$VMN" -VhdDestinationPath "$HyperVF\$VMN"
         $vm = Get-VM | Where-Object {$_.Path.StartsWith("$HyperVF\$VMN")}
         Rename-VM -VM $vm -NewName $VMN
 
