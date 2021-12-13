@@ -1,0 +1,5 @@
+eval `ssh-agent`
+ssh-add
+
+
+alias import-hosts="cat ansible.cfg | grep ansible_host | sort -u | awk -F' |=' '{print \$5,\$1}'"
