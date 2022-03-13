@@ -1,6 +1,7 @@
 function clone-vm {
 
-    # This requires administrator level privileges to complete
+    # This requires administrator level privileges to complete 
+    # This tool is designed to clone VMs in HyperV windows home versions as Virtualbox is not supported under Windows 11
     
 
     $VMS = Get-VM | Select -ExpandProperty name
