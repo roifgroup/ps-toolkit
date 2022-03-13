@@ -1,5 +1,7 @@
+# Import security keys
 eval `ssh-agent`
 ssh-add
 
 
+# Imoprt hosts files to /etc/hosts easily from ansible.cfg files (import-hosts | sudo tee -a /etc/hosts)
 alias import-hosts="cat ansible.cfg | grep ansible_host | sort -u | awk -F' |=' '{print \$5,\$1}'"
